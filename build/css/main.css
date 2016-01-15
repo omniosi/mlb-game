@@ -1,0 +1,31 @@
+html{
+	box-sizing: border-box;
+}
+*, *:before, *:after{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+.banner300x250{
+	width: 300px;
+	height: 250px;
+	overflow: hidden;
+	background: #000;
+	position: relative;
+	border: 1px solid #000;
+}
+h1,
+.odc,
+.mutt{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+h1{
+	font-family: "Alfa Slab One", Arial, Helvetica, sans-serif;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+
+}
