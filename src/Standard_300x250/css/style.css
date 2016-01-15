@@ -1,0 +1,12 @@
+.body{
+	font-family:Arial;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;	
+}
+.container{
+	width: 300px;
+	height: 250px;
+	background-image:url("../images/desktop_html5_standardad_300x250.jpg"); 
+	background-repeat:no-repeat;
+}
