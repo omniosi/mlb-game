@@ -51,7 +51,7 @@
 			"file": "build/banner.html",
 			"settings":
 			{
-				"buffer_size": 917,
+				"buffer_size": 820,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +59,7 @@
 			"file": "build/js/main.js",
 			"settings":
 			{
-				"buffer_size": 509,
+				"buffer_size": 577,
 				"line_ending": "Unix"
 			}
 		},
@@ -67,7 +67,7 @@
 			"file": "build/css/main.css",
 			"settings":
 			{
-				"buffer_size": 631,
+				"buffer_size": 627,
 				"line_ending": "Unix"
 			}
 		},
@@ -210,7 +210,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -219,15 +219,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 917,
+						"buffer_size": 820,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								509,
-								509
+								279,
+								279
 							]
 						],
 						"settings":
@@ -240,7 +240,7 @@
 						"translation.y": 179.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -249,15 +249,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 509,
+						"buffer_size": 577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								323,
-								323
+								343,
+								343
 							]
 						],
 						"settings":
@@ -266,10 +266,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 8.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -278,15 +278,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 631,
+						"buffer_size": 627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								365,
-								365
+								114,
+								114
 							]
 						],
 						"settings":
@@ -296,10 +296,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 256.0,
+						"translation.y": 407.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
