@@ -17,7 +17,8 @@ window.onload = function(){
 		onComplete: step3
 	});
 	var step3 = TweenLite.to(mutt,0.5,{
-		y:-150,
+		x:-182,
+		y:-30,
 		scale: 0.5,
 		ease: Power1.easeInOut,
 		delay:2,
@@ -30,7 +31,8 @@ window.onload = function(){
 		onComplete: step5
 	});
 	var step5 = TweenLite.to(odc,0.5,{
-		y:80,
+		x:-75,
+		y:60,
 		scale: 0.5,
 		ease: Power1.easeInOut,
 		delay:3,

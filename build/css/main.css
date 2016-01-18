@@ -29,10 +29,11 @@ h1{
 	color: #fff;
 	width: 100%;
 	text-align: center;
-	font-size: 1.65em;
+	font-size: 1em;
 	line-height: 1.125em;
-	letter-spacing: 0.025em;
+	letter-spacing: 0.075em;
 	text-shadow: 0 2px 5px #000;
+	top: 93%;
 }
 #bk{
 }
