@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<div id="container"></div>
+<div id="unexpanded">
+<img id="logo" src="images/logo.jpg" alt="logo" />
+<div class="dynText"></div>
+<img id="mainImg1" />
+<img id="expandBtn" alt="expand button" src="images/expand.png" />
+</div>
+
+
+
+<div id="expanded">
+<img id="logo" src="images/logo.jpg" alt="logo" />
+<div class="dynText"></div>
+
+<img id="mainImg2" />
+<div id="bigVid"></div>
+
+<div id="carouselContainer">
+<div id="carousel">
+<img class="gallery" id="galImg1" />
+<img class="gallery" id="galImg2" />
+<img class="gallery" id="galImg3" />
+<span class="gallery" id="vidGalHolder"></span>
+<img class="gallery" id="galImg4" />
+<img class="gallery" id="galImg5" />
+<img class="gallery" id="galImg6" />
+</div>
+</div>
+
+<img id="close" src="images/close.jpg" alt="close" />
+</div>
+
+
+<script src="http://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
+<script>
+
+
+container = myFT.$("#container"),
+unexpanded = myFT.$("#unexpanded"),
+expanded = myFT.$("#expanded"),
+expandBtn = myFT.$("#expandBtn"),
+close = myFT.$("#close"),
+dynText = myFT.$(".dynText"),
+mainImg1 = myFT.$("#mainImg1"),
+mainImg2 = myFT.$("#mainImg2"),
+galImg1 = myFT.$("#galImg1"),
+galImg2 = myFT.$("#galImg2"),
+galImg3 = myFT.$("#galImg3"),
+galImg4 = myFT.$("#galImg4"),
+galImg5 = myFT.$("#galImg5"),
+galImg6 = myFT.$("#galImg6"),
+vidGalHolder = myFT.$("#vidGalHolder"),
+bigVid = myFT.$("#bigVid"),
+gallery = myFT.$(".gallery"),
+carousel = myFT.$("#carousel"),
+carouselContainer = myFT.$("#carouselContainer");
+
+//boolean to check whether the video has been pulled in
+var inserted = false;
+
+//expand and contract functionality
+expand = function(){
+			unexpanded.css("display", "none");
+			expanded.css("display", "block");
+			myFT.expand();
+
+			//centre the carousel on expand
+			carouselContainer[0].scrollLeft = 200;			
+		}
+
+contract = function(e){
+			unexpanded.css("display", "block");
+			expanded.css("display", "none");
+			if(inserted) {
+						vid.pause();
+			}
+				if(e && e.type) {
+                	myFT.contract();
+                }
+			}
+	myFT.on('contract', contract);
+
+myFT.applyButton(expandBtn, expand);
+myFT.applyButton(close, function(){myFT.contract()});
+
+//clickTag 
+myFT.applyClickTag(container);
+
+//most functionality is wrapped within the instantAds event listener, to ensure all assets are available
+myFT.on("instantads", function(){
+
+	//set the image on the unexpanded section
+	mainImg1[0].src = myFT.instantAds.mainImg;
+
+	//set the text
+	dynText[0].innerHTML= myFT.instantAds.dynText;
+
+	//set the small gallery images
+	galImg1[0].src = myFT.instantAds.galPic1;
+	galImg2[0].src = myFT.instantAds.galPic2;
+	galImg3[0].src = myFT.instantAds.galPic3;
+	galImg4[0].src = myFT.instantAds.galPic1;
+	galImg5[0].src = myFT.instantAds.galPic2;
+	galImg6[0].src = myFT.instantAds.galPic3;
+	mainImg2[0].src = myFT.instantAds.galPic1;
+
+	//hover-scroll functionality
+		gallery.on("mouseover", function(event) {
+			var pos = event.clientX;
+			if(pos < 225) {
+					move = setInterval(function(){
+					carouselContainer[0].scrollLeft -= 5;
+				}, 25);
+				
+			}
+			else {
+				if(pos > 275) {
+					move = setInterval(function(){
+					carouselContainer[0].scrollLeft += 5;
+					}, 25);				
+				}
+			}
+		});
+
+		gallery.on("mouseout", function() {
+			clearInterval(move);
+		});
+
+		//handle clicks on small gallery images
+		gallery.on("click", function(event) {
+
+			if(event.target.id === "vidGalHolder" && inserted === false) {
+				mainImg2.css("display", "none");
+				bigVid.css("display", "block");
+				vid = myFT.insertVideo({
+					video: "galVid",
+					parent: bigVid,
+					autoplay: false,
+					controls: true,
+					clickTag: true
+				});
+				inserted = true;
+			}
+			else {
+				if(event.target.id === "vidGalHolder" && inserted === true) {
+					mainImg2.css("display", "none");
+					bigVid.css("display", "block");
+				}
+				else {
+					mainImg2.css("display", "block");
+					if(inserted) {
+						vid.pause();
+					}
+					bigVid.css("display", "none");
+					mainImg2[0].src = event.target.src;
+				}
+			}
+		});
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body{
+				margin:0;
+				font-family: Arial, Helvetica, sans-serif;
+				color:#000;
+				font-size:1em;
+			}
+			#unexpanded{
+				width:320px;
+				height:50px;
+				background-image: url(media/320x50_background_blue.jpg);
+				background-color:#FFF;
+			}
+			#expanded{
+				display:none;
+				width:318px;
+				height:344px;
+				border: 1px #000 solid;
+				border-top: 5px #0C7DBF solid;
+				background-color:#fff;
+				position:relative;
+			}
+			.logo{
+				margin:6px 0px;
+				padding:5px;
+			}
+			.blurb{
+				padding:3px;
+				margin:100px 10px;
+			}
+			#close{
+				position:absolute;
+				bottom:0px;
+				right:0px;
+				margin:2px;
+				padding:3px;
+			}
+			#tap{
+				float: right;
+				margin: 12px;
+				margin-right: 10px;
+				background-color: #0C7DBF;
+				padding: 5px;
+				text-align: center;
+				text-shadow: 1px 1px #000;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- content -->
+		<div id="container">
+			<div id="unexpanded">
+				<img class="logo" src="media/logo_on_white.jpg">
+				<p id="tap">Tap to expand</p>
+			</div>
+			<div id="expanded">
+				<img class="logo" src="media/logo_on_white.jpg">
+
+				<p class="blurb">This is a Flashtalking HTML5 expand ad. You can use this as the basis for any expand ad.</p>
+				<p id="close">close [x]</p>
+			</div>
+		</div>
+		<!-- scripts -->
+		<script src="http://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
+		<script>
+
+			var unexpanded = myFT.$("#unexpanded"),
+			expanded = myFT.$("#expanded"),
+			close = myFT.$("#close"),
+			expand = function(){
+				unexpanded.css("display", "none");
+				expanded.css("display", "block");
+				myFT.expand();
+			},
+			contract = function(e){
+				expanded.css("display", "none");
+				unexpanded.css("display", "block");
+				if(e && e.type) {
+                	myFT.contract();
+                }
+			};
+			myFT.on("contract", contract);
+
+			myFT.applyButton(unexpanded, expand);
+			myFT.applyClickTag(expanded);
+			myFT.applyButton(close, function(){myFT.contract()});
+		</script>
+	</body>
+</html>

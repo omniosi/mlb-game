@@ -1,0 +1,37 @@
+.body{
+	font-family:Arial;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;	
+}
+@font-face {
+ 	font-family: OpenSans;
+   	src: url(../fonts/opensans-regular-webfont.woff);
+}
+.container{
+	width: 300px;
+	height: 250px;
+	background-image:url("../images/300x250_background_pink.jpg"); 
+	background-repeat:no-repeat;
+}
+#vidholder {
+		height: 150px;
+		margin: 45px;
+		margin-top: 40px;
+		position: absolute;
+        width: 200px;
+	}
+#ftLogo{
+		position: relative;
+		top: 12px;
+		left: 10px;
+	}
+h1{
+		font-size: 11px;
+		font-weight: normal;
+		position: absolute;
+		top: 30px;
+		left: 10px;
+		width: 200px;
+		font-family:OpenSans;
+	}

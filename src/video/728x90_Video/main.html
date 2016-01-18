@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+	</head>
+
+	<!--content-->
+	
+	<body>
+		<div id="container" class="container">
+			<img id="ftLogo" src="images/logo_on_white_728x90.jpg"/>
+			<h1>Desktop HTML5 Video Ad</h1>
+			<div id="vidHolder"></div>
+			<img id="cta" src="images/cta_blue.jpg"/>
+		</div>
+
+		<!--scripts-->
+
+		<script src="http://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
+		<script type="text/javascript">
+
+			// declare HTML elements
+			container = myFT.$("#container"),
+			// declare video object
+			vidHolder = myFT.$("#vidHolder");
+
+			// insert video
+			vid = myFT.insertVideo({
+				parent: vidHolder,
+				video: "video1",
+				poster: "images/video_coverImage_728x90.jpg",
+				height: 85,
+				width: 150,
+				controls:true
+			});
+
+			// apply clickTags
+			myFT.applyClickTag(container, 1);
+
+		</script>
+	</body>
+</html>

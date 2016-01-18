@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="container" class="container">
+			<img id="ftLogo" src="images/logo.jpg"/>
+			<h1>HTML5 Youtube Instant Ad</h1>
+    		<div id="vidholder"></div>
+		</div>
+		<script src="http://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
+		<script type="text/javascript">
+
+			vidHolder = myFT.$("#vidholder"),
+			container = myFT.$("#container");
+			myFT.applyClickTag(container, 1);
+
+
+			var vid = myFT.insertVideo({
+    		parent: vidHolder,
+    		video: "video1",
+    		controls: true,
+    		autoplay: false,
+   			width: "200",
+    		height: "150"
+			});
+
+			myFT.on("instantads", function(){
+				myFT.videos.video1 = myFT.instantAds.youtubeTextVariable		
+			});
+
+		</script>
+	</body>
+</html>
+		
