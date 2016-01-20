@@ -24,6 +24,7 @@ h1,
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+#plus,
 h1{
 	font-family: "Alfa Slab One", Arial, Helvetica, sans-serif;
 	color: #fff;
@@ -35,5 +36,11 @@ h1{
 	text-shadow: 0 2px 5px #000;
 	top: 93%;
 }
-#bk{
+#odc{
+	transform: scale(0.5,0.5) translate(-285px,75px);
+}
+#plus{
+	color: #df00df;
+	top: 64%;
+	text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
